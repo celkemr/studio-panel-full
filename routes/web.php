@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');
+    Route::get('/events', [CalendarController::class, 'events'])->name('events');
     Route::resource('courses', CourseController::class)->only(['index', 'create', 'store']);
 
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
